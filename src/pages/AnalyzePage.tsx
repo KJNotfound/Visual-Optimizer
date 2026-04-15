@@ -138,7 +138,7 @@ export function AnalyzePage() {
               <ArrowLeft className="h-4 w-4" />
               <Sparkles className="h-6 w-6 text-primary" />
               <span className="text-lg font-bold tracking-tight text-foreground">
-                VibeCoding
+                VibeCheck
               </span>
             </Link>
           </div>
