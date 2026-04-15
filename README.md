@@ -29,8 +29,8 @@ Don't have Node.js? Download the LTS version from [nodejs.org](https://nodejs.or
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/KJNotfound/VibeCoding.git
-cd VibeCoding
+git clone https://github.com/KJNotfound/Visual-Optimizer.git
+cd Visual-Optimizer
 
 # 2. Install dependencies
 npm install
