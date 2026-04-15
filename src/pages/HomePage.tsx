@@ -54,7 +54,7 @@ export function HomePage() {
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Sparkles className="h-6 w-6 text-primary" />
-            <span className="text-lg font-bold tracking-tight">VibeCoding</span>
+            <span className="text-lg font-bold tracking-tight">VibeCheck</span>
           </div>
           <Link to="/analyze">
             <Button variant="outline" size="sm">
@@ -151,7 +151,7 @@ export function HomePage() {
 
       <footer className="border-t border-border/50 py-8 px-6">
         <div className="max-w-6xl mx-auto text-center text-sm text-muted-foreground">
-          VibeCoding &copy; {new Date().getFullYear()} &mdash; 前端视觉优化工具
+          VibeCheck &copy; {new Date().getFullYear()} &mdash; 前端视觉优化工具
         </div>
       </footer>
     </div>
