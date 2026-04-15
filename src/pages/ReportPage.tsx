@@ -160,7 +160,7 @@ export function ReportPage() {
             >
               <Sparkles className="h-6 w-6 text-primary" />
               <span className="text-lg font-bold tracking-tight text-foreground">
-                VibeCheck
+                Visual Optimizer
               </span>
             </Link>
           </div>
@@ -288,7 +288,7 @@ export function ReportPage() {
 
       <footer className="border-t border-border/50 py-6 px-6 mt-8">
         <div className="max-w-6xl mx-auto text-center text-sm text-muted-foreground">
-          VibeCheck &copy; {new Date().getFullYear()} &mdash; 前端视觉优化工具
+          Visual Optimizer &copy; {new Date().getFullYear()}
         </div>
       </footer>
     </div>
