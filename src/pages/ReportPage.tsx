@@ -31,6 +31,7 @@ const CATEGORY_ICON: Record<RuleCategory, typeof Eye> = {
   accessibility: Accessibility,
 }
 
+<<<<<<< HEAD
 const CATEGORY_COLOR: Record<RuleCategory, { text: string; bg: string; border: string; ring: string }> = {
   color: {
     text: 'text-violet-400',
@@ -62,6 +63,20 @@ const SEVERITY_CONFIG: Record<Severity, { icon: typeof AlertCircle; label: strin
   error: { icon: AlertCircle, label: '严重', variant: 'destructive', color: 'text-red-400' },
   warning: { icon: AlertTriangle, label: '警告', variant: 'warning', color: 'text-amber-400' },
   info: { icon: Info, label: '建议', variant: 'secondary', color: 'text-blue-400' },
+=======
+const CATEGORY_COLOR: Record<RuleCategory, string> = {
+  color: 'text-violet-300',
+  typography: 'text-sky-300',
+  spacing: 'text-emerald-300',
+  accessibility: 'text-amber-300',
+}
+
+const CATEGORY_BG: Record<RuleCategory, string> = {
+  color: 'bg-violet-500/15',
+  typography: 'bg-sky-500/15',
+  spacing: 'bg-emerald-500/15',
+  accessibility: 'bg-amber-500/15',
+>>>>>>> 45e99f3 (feat: upgrade editor and dark theme polish)
 }
 
 function ScoreRing({ score, size = 160 }: { score: number; size?: number }) {
@@ -136,6 +151,7 @@ function CategoryCard({ data, isActive, onClick }: { data: CategoryScore; isActi
   const warnCount = data.issues.filter(i => i.severity === 'warning').length
 
   return (
+<<<<<<< HEAD
     <button
       onClick={onClick}
       className={`w-full text-left p-4 rounded-xl border transition-all cursor-pointer ${
@@ -147,6 +163,12 @@ function CategoryCard({ data, isActive, onClick }: { data: CategoryScore; isActi
       <div className="flex items-start justify-between mb-3">
         <div className={`flex items-center justify-center w-9 h-9 rounded-lg ${colors.bg}`}>
           <Icon className={`h-4.5 w-4.5 ${colors.text}`} />
+=======
+    <Card className="border-border/60 bg-card/75 backdrop-blur-sm">
+      <CardContent className="p-4 flex items-center gap-4">
+        <div className={`flex items-center justify-center w-10 h-10 rounded-lg ${iconBg}`}>
+          <Icon className={`h-5 w-5 ${iconColor}`} />
+>>>>>>> 45e99f3 (feat: upgrade editor and dark theme polish)
         </div>
         <span className={`text-2xl font-bold tabular-nums ${scoreColor}`}>{data.score}</span>
       </div>
@@ -193,6 +215,7 @@ export function ReportPage() {
   if (!report) return null
 
   return (
+<<<<<<< HEAD
     <div className="min-h-screen flex flex-col bg-background">
       <header className="border-b border-border/40 backdrop-blur-md sticky top-0 z-50 bg-background/70">
         <div className="max-w-7xl mx-auto px-6 h-14 flex items-center justify-between">
@@ -202,6 +225,20 @@ export function ReportPage() {
                 <Sparkles className="h-3.5 w-3.5 text-primary" />
               </div>
               <span className="text-sm font-bold tracking-tight">Visual Optimizer</span>
+=======
+    <div className="min-h-screen flex flex-col">
+      <header className="border-b border-border/60 backdrop-blur-xl sticky top-0 z-50 bg-background/70">
+        <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+          <div className="flex items-center gap-4">
+            <Link
+              to="/"
+              className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
+            >
+              <Sparkles className="h-6 w-6 text-primary" />
+              <span className="text-lg font-bold tracking-tight text-foreground">
+                Visual Optimizer
+              </span>
+>>>>>>> 45e99f3 (feat: upgrade editor and dark theme polish)
             </Link>
           </div>
           <div className="flex items-center gap-2">
@@ -223,8 +260,13 @@ export function ReportPage() {
         </div>
       </header>
 
+<<<<<<< HEAD
       <main className="flex-1 max-w-7xl mx-auto w-full px-6 py-8">
         <section className="flex flex-col lg:flex-row items-center lg:items-start gap-10 mb-10 p-8 rounded-2xl bg-card border border-border/40">
+=======
+      <main className="flex-1 max-w-6xl mx-auto w-full px-6 py-8">
+        <section className="flex flex-col sm:flex-row items-center gap-8 mb-10 rounded-2xl border border-border/60 bg-card/55 p-6 backdrop-blur-sm">
+>>>>>>> 45e99f3 (feat: upgrade editor and dark theme polish)
           <ScoreRing score={report.overallScore} />
           <div className="flex-1 text-center lg:text-left">
             <h1 className="text-2xl font-bold mb-2">分析报告</h1>
@@ -247,7 +289,11 @@ export function ReportPage() {
 
         <section>
           <Tabs value={activeTab} onValueChange={(v) => setActiveTab(v as RuleCategory)}>
+<<<<<<< HEAD
             <TabsList className="w-full sm:w-auto mb-4 bg-surface border border-border/40">
+=======
+            <TabsList className="w-full sm:w-auto border border-border/60 bg-card/60">
+>>>>>>> 45e99f3 (feat: upgrade editor and dark theme polish)
               {report.categories.map((cat) => {
                 const Icon = CATEGORY_ICON[cat.category]
                 return (
@@ -267,6 +313,7 @@ export function ReportPage() {
             {report.categories.map((cat) => (
               <TabsContent key={cat.category} value={cat.category}>
                 {cat.issues.length === 0 ? (
+<<<<<<< HEAD
                   <div className="py-16 text-center rounded-2xl border border-border/40 bg-card">
                     <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-emerald-500/10 mb-4">
                       <Check className="h-8 w-8 text-emerald-400" />
@@ -274,12 +321,21 @@ export function ReportPage() {
                     <p className="text-lg font-medium mb-1">表现优秀</p>
                     <p className="text-sm text-muted-foreground">此维度未发现问题</p>
                   </div>
+=======
+                  <Card className="border-border/60 bg-card/75">
+                    <CardContent className="py-12 text-center">
+                      <div className="text-4xl mb-3">&#10003;</div>
+                      <p className="text-muted-foreground">此维度未发现问题，表现优秀！</p>
+                    </CardContent>
+                  </Card>
+>>>>>>> 45e99f3 (feat: upgrade editor and dark theme polish)
                 ) : (
                   <div className="space-y-3">
                     {cat.issues.map((issue) => {
                       const sevConfig = SEVERITY_CONFIG[issue.severity]
                       const SevIcon = sevConfig.icon
                       return (
+<<<<<<< HEAD
                         <div key={issue.id} className="rounded-xl border border-border/40 bg-card overflow-hidden">
                           <div className="flex items-start gap-3 p-4 pb-3">
                             <div className={`flex items-center justify-center w-8 h-8 rounded-lg ${
@@ -290,6 +346,33 @@ export function ReportPage() {
                                 : 'bg-blue-500/10'
                             } mt-0.5 shrink-0`}>
                               <SevIcon className={`h-4 w-4 ${sevConfig.color}`} />
+=======
+                        <Card key={issue.id} className="border-border/60 bg-card/75">
+                          <CardHeader className="pb-2">
+                            <div className="flex items-start gap-3">
+                              <SevIcon className={`h-5 w-5 mt-0.5 ${
+                                issue.severity === 'error'
+                                  ? 'text-destructive'
+                                  : issue.severity === 'warning'
+                                  ? 'text-warning'
+                                  : 'text-muted-foreground'
+                              }`} />
+                              <div className="flex-1 min-w-0">
+                                <div className="flex items-center gap-2 mb-1 flex-wrap">
+                                  <CardTitle className="text-sm font-medium">
+                                    {issue.message}
+                                  </CardTitle>
+                                  <Badge variant={sevConfig.variant} className="text-[10px] px-1.5 py-0">
+                                    {sevConfig.label}
+                                  </Badge>
+                                </div>
+                                {issue.element && (
+                                  <code className="text-xs text-muted-foreground bg-muted/80 px-1.5 py-0.5 rounded">
+                                    {issue.element}
+                                  </code>
+                                )}
+                              </div>
+>>>>>>> 45e99f3 (feat: upgrade editor and dark theme polish)
                             </div>
                             <div className="flex-1 min-w-0">
                               <div className="flex items-center gap-2 mb-1.5 flex-wrap">
@@ -311,8 +394,13 @@ export function ReportPage() {
                               {issue.suggestion}
                             </p>
                             {issue.fixCode && (
+<<<<<<< HEAD
                               <div className="relative group">
                                 <pre className="text-xs bg-surface border border-border/40 rounded-lg p-3 overflow-x-auto font-mono leading-relaxed">
+=======
+                              <div className="relative">
+                                <pre className="text-xs bg-background/70 border border-border/60 rounded-lg p-3 overflow-x-auto">
+>>>>>>> 45e99f3 (feat: upgrade editor and dark theme polish)
                                   <code>{issue.fixCode}</code>
                                 </pre>
                                 <div className="absolute top-1.5 right-1.5 opacity-0 group-hover:opacity-100 transition-opacity">
