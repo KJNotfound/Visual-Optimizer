@@ -2,12 +2,7 @@ import { useRef, useEffect, useCallback } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import Editor from '@monaco-editor/react'
 import { Button } from '@/components/ui/button'
-<<<<<<< HEAD
-import { Textarea } from '@/components/ui/textarea'
-import { ThemeToggle } from '@/components/ThemeToggle'
-=======
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
->>>>>>> 45e99f3 (feat: upgrade editor and dark theme polish)
 import { useAnalysisStore } from '@/store/analysis-store'
 import {
   Sparkles,
@@ -203,77 +198,34 @@ export function AnalyzePage() {
   }
 
   return (
-<<<<<<< HEAD
-    <div className="min-h-screen flex flex-col bg-background">
-      <header className="border-b border-border/40 backdrop-blur-md sticky top-0 z-50 bg-background/70">
-        <div className="max-w-[1400px] mx-auto px-6 h-14 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-=======
     <div className="min-h-screen flex flex-col">
       <header className="border-b border-border/60 backdrop-blur-xl sticky top-0 z-50 bg-background/70">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           <div className="flex items-center gap-4">
->>>>>>> 45e99f3 (feat: upgrade editor and dark theme polish)
             <Link
               to="/"
               className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
             >
               <ArrowLeft className="h-4 w-4" />
-            </Link>
-            <div className="w-px h-5 bg-border/60" />
-            <Link to="/" className="flex items-center gap-2">
-              <div className="flex items-center justify-center w-7 h-7 rounded-lg bg-primary/10">
-                <Sparkles className="h-3.5 w-3.5 text-primary" />
-              </div>
-              <span className="text-sm font-bold tracking-tight">Visual Optimizer</span>
+              <Sparkles className="h-6 w-6 text-primary" />
+              <span className="text-lg font-bold tracking-tight text-foreground">
+                Visual Optimizer
+              </span>
             </Link>
           </div>
-          <div className="flex items-center gap-2">
-            <Button variant="ghost" size="sm" onClick={loadSample} className="gap-1.5 text-xs h-8">
+          <div className="flex items-center gap-3">
+            <Button variant="outline" size="sm" onClick={loadSample} className="gap-1.5">
               <FileCode className="h-3.5 w-3.5" />
               加载示例
             </Button>
-            <Button variant="ghost" size="sm" onClick={handleReset} className="gap-1.5 text-xs h-8">
+            <Button variant="ghost" size="sm" onClick={handleReset} className="gap-1.5">
               <RotateCcw className="h-3.5 w-3.5" />
               重置
             </Button>
-            <div className="w-px h-5 bg-border/60" />
-            <ThemeToggle />
           </div>
         </div>
       </header>
 
-<<<<<<< HEAD
-      <main className="flex-1 max-w-[1400px] mx-auto w-full px-4 py-4">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-4 h-[calc(100vh-7.5rem)]">
-          <div className="flex flex-col gap-3 min-h-0">
-            <div className="flex-1 flex flex-col min-h-0 rounded-xl border border-border/60 bg-card overflow-hidden">
-              <div className="flex items-center gap-2 px-4 py-2.5 border-b border-border/40 bg-surface">
-                <FileCode className="h-3.5 w-3.5 text-muted-foreground" />
-                <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">HTML</span>
-              </div>
-              <div className="flex-1 p-2 min-h-0">
-                <Textarea
-                  placeholder="粘贴你的 HTML 代码..."
-                  value={htmlInput}
-                  onChange={(e) => setHtmlInput(e.target.value)}
-                  className="h-full resize-none text-xs leading-relaxed border-0 focus-visible:ring-0 focus-visible:ring-offset-0 bg-transparent"
-                />
-              </div>
-            </div>
-
-            <div className="flex-1 flex flex-col min-h-0 rounded-xl border border-border/60 bg-card overflow-hidden">
-              <div className="flex items-center gap-2 px-4 py-2.5 border-b border-border/40 bg-surface">
-                <FileCode className="h-3.5 w-3.5 text-muted-foreground" />
-                <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">CSS</span>
-              </div>
-              <div className="flex-1 p-2 min-h-0">
-                <Textarea
-                  placeholder="粘贴你的 CSS 代码（可选）..."
-                  value={cssInput}
-                  onChange={(e) => setCssInput(e.target.value)}
-                  className="h-full resize-none text-xs leading-relaxed border-0 focus-visible:ring-0 focus-visible:ring-offset-0 bg-transparent"
-=======
       <main className="flex-1 max-w-7xl mx-auto w-full px-6 py-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 h-[calc(100vh-10rem)]">
           <div className="flex flex-col gap-4 min-h-0">
@@ -306,22 +258,11 @@ export function AnalyzePage() {
                   value={cssInput}
                   onChange={setCssInput}
                   language="css"
->>>>>>> 45e99f3 (feat: upgrade editor and dark theme polish)
                 />
-              </div>
-            </div>
+              </CardContent>
+            </Card>
           </div>
 
-<<<<<<< HEAD
-          <div className="flex flex-col gap-3 min-h-0">
-            <div className="flex-1 flex flex-col min-h-0 rounded-xl border border-border/60 bg-card overflow-hidden">
-              <div className="flex items-center gap-2 px-4 py-2.5 border-b border-border/40 bg-surface">
-                <Eye className="h-3.5 w-3.5 text-muted-foreground" />
-                <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Preview</span>
-              </div>
-              <div className="flex-1 p-2 min-h-0">
-                <div className="h-full rounded-lg border border-border/40 bg-white overflow-hidden">
-=======
           <div className="flex flex-col gap-4 min-h-0">
             <Card className="flex-1 flex flex-col min-h-0 border-border/60 bg-card/75 backdrop-blur-sm shadow-lg shadow-black/20">
               <CardHeader className="pb-3">
@@ -332,7 +273,6 @@ export function AnalyzePage() {
               </CardHeader>
               <CardContent className="flex-1 pb-4 min-h-0">
                 <div className="h-full rounded-lg border border-border/70 bg-white overflow-hidden shadow-inner">
->>>>>>> 45e99f3 (feat: upgrade editor and dark theme polish)
                   <iframe
                     ref={previewRef}
                     title="preview"
@@ -340,38 +280,30 @@ export function AnalyzePage() {
                     sandbox="allow-same-origin"
                   />
                 </div>
-              </div>
-            </div>
+              </CardContent>
+            </Card>
 
             <Button
               size="lg"
-<<<<<<< HEAD
-              className="w-full gap-2 h-11 text-sm font-semibold shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all"
-=======
               className="w-full gap-2 h-12 text-base bg-gradient-to-r from-primary to-sky-400 text-primary-foreground hover:opacity-95 shadow-lg shadow-primary/25"
->>>>>>> 45e99f3 (feat: upgrade editor and dark theme polish)
               onClick={handleAnalyze}
               disabled={status === 'analyzing' || !htmlInput.trim()}
             >
               {status === 'analyzing' ? (
                 <>
-                  <Loader2 className="h-4 w-4 animate-spin" />
+                  <Loader2 className="h-5 w-5 animate-spin" />
                   分析中...
                 </>
               ) : (
                 <>
-                  <Play className="h-4 w-4" />
+                  <Play className="h-5 w-5" />
                   开始分析
                 </>
               )}
             </Button>
 
             {errorMessage && (
-<<<<<<< HEAD
-              <div className="text-sm text-destructive bg-destructive/10 border border-destructive/20 rounded-lg px-4 py-3">
-=======
               <div className="text-sm text-destructive bg-destructive/10 border border-destructive/40 rounded-lg px-4 py-3">
->>>>>>> 45e99f3 (feat: upgrade editor and dark theme polish)
                 {errorMessage}
               </div>
             )}
